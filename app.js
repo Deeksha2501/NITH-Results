@@ -33,6 +33,7 @@ function get() {
   var expression = new RegExp(searchField, "i");
   $.getJSON(`./json/${branch}/batch_${batch}_${c}pi.json`, function (data) {
     // $('.table-row').empty();
+    document.querySelector('.total').innerHTML = `Total Results : ${data.length}`;
     clear();
     $.each(data, function (key, value) {
       if (
@@ -41,6 +42,20 @@ function get() {
         value.Branch.search(expression) != -1
       ) {
         // console.log(value);
+        let branch = value.Branch.split('_')[0];
+        if(branch == 'Cse'){
+          branch = 'Computer Science and Enginnering'
+        }else if(branch == 'Ece'){
+          branch = 'Electronics and Communication Engineering'
+        }else if(branch == 'Architecture'){
+          //nothing
+        }
+        else if(branch == 'Material'){
+          branch += ' Science and Engineering'
+        }
+        else{
+          branch += ' Engineering'
+        }
         let color = "";
         if (value.Rank == 1) {
           color = "#ffd701";
@@ -61,7 +76,7 @@ function get() {
       </div>
     <div class="table-cell branch">
       <div class="head">Year : ${value.Year}</div>
-      <div class="p">${value.Branch}</div>
+      <div class="p">${branch}</div>
     </div>
     <div class="table-cell cg">
       <div class="head">CGPA : ${value.Cgpa}</div>
