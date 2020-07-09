@@ -209,3 +209,8 @@ option {
   margin: 10px;
   background: black;
 }
+
+.nothing{
+  text-align: center;
+  /* display: none; */
+}

@@ -33,8 +33,12 @@ function get() {
   var searchField = $("#search").val();
   var expression = new RegExp(searchField, "i");
   $.getJSON(`./json/${branch}/batch_${batch}_${c}pi.json`, function (data) {
+    let count = 0 , flag = 0;
     // $('.table-row').empty();
-    document.querySelector('.total').innerHTML = `Total Results : ${data.length}`;
+    // if(data.length === 0){
+    //   document.querySelector('.nothing').style.display = inline;
+    // }
+    // document.querySelector('.total').innerHTML = `Total Results : ${data.length}`;
     clear();
     $.each(data, function (key, value) {
       if (
@@ -42,6 +46,10 @@ function get() {
         value.Rollno.search(expression) != -1 ||
         value.Branch.search(expression) != -1
       ) {
+        flag = 1;
+        count += 1;
+        document.querySelector('.nothing').style.display = "none";
+        document.querySelector('.total').innerHTML = `Total Results : ${count}`;
         // console.log(value);
         let branch = value.Branch.split('_')[0];
         if(branch == 'Cse'){
@@ -94,6 +102,12 @@ function get() {
         );
       }
     });
+    if(flag == 0){
+      count = 0;
+      document.querySelector('.total').innerHTML = `Total Results : ${count}`;
+      document.querySelector('.nothing').style.display = "block";
+
+    }
   });
 }
 
