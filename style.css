@@ -65,8 +65,11 @@ body {
     display: inline-block;
   }
   
-  .name , .branch{
+  .name {
     width: 30%;
+  }
+  .branch{
+    width: 25%;
   }
   
   .head{
@@ -139,7 +142,7 @@ body {
 }
 
 .search{
-  width: 60%;
+  width: 55%;
   position: relative;
 }
 
@@ -182,7 +185,7 @@ input{
 }
 
 .branch-changer , .batch-changer{
-  width: 14%;
+  width: 15%;
 }
 
 .ser-box{
