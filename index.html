@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <title>NITH RESULTS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="title">
+    NIT HAMIRPUR RESULTS SEARCH ENGINE
+  </div>
+  <div class="ser-box">
+     <div class="search">
+       <input type="search" name="search" id="search" onchange="check()" onclick="check()" placeholder='Search using Name , RollNo , Branch' />
+       <label for="search">Search using Name , RollNo , Branch</label>
+     </div>
+
+    <div class="branch-changer">
+        <select name="branch" id="branch" title="Branch" onchange="check()">
+          <option value="Architecture">Architecture</option>
+          <option value="Chemical">Chemical</option>
+          <option value="Civil">Civil</option>
+          <option selected value="Cse">Cse</option>
+          <option value="Cse_dual">Cse_dual</option>
+          <option value="Ece">Ece</option>
+          <option value="Ece_dual">Ece_dual</option>
+          <option value="Electrical">Electrical</option>
+          <option value="Material">Material</option>
+          <option value="Mechanical">Mechanical</option>
+        </select>
+      </div>
+  
+      <div class="batch-changer">
+        <select name="batch" id="batch" title="Batch" onchange="check()">
+          <option  value="19">19</option>
+          <option selected value="18">18</option>
+          <option value="17">17</option>
+          <option value="16">16</option>
+        </select>
+      </div>
+      <div class="cg-sg"  title="sort: CGPA / SGPA" onchange="check()">
+        <select id="cg-sg" name="c-toggle" class="c-toggle">
+          <option selected value="cg">CGPA</option>
+          <option value="sg">SGPA</option>
+        </select>
+      </div>
+      </div>
+      <div class="table_head">
+      <div class="tbl-row heading">
+        <div class="table-cell name">
+          <div class="head total">Total Results : 30</div>
+        </div>
+        <div class="table-cell branch">
+          <div class="head"></div>
+        </div>
+        <div class="table-cell cg">
+          <div class="head"></div> 
+        </div>
+        <div class="table-cell rank">
+        <div class="head"></div>
+        </div>
+      </div>
+      <div class="tbl-row heading">
+        <div class="table-cell name">
+          <div class="head">Name</div>
+        </div>
+        <div class="table-cell branch">
+          <div class="head">Current Year</div>
+        </div>
+        <div class="table-cell cg">
+          <div class="head">Grade Point</div> 
+        </div>
+        <div class="table-cell rank">
+        <div class="head">Rank</div>
+        </div>
+        <hr>
+      </div>
+    </div>
+      <div id="table" >
+    
+
+        <div class="table-row">
+          <!-- <div class="table-cell name">
+            <div class="head">185094</div>
+            <div class="p">Deeksha Sharma</div>
+          </div>
+          <div class="table-cell branch">
+            <div class="head">Year : 2</div>
+            <div class="p">Computer Science and Engineering</div>
+          </div>
+          <div class="table-cell cg">
+            <div class="head">CGPA : 9.5</div>
+            <div class="p">SGPA : 10</div>
+          </div>
+          <div class="table-cell rank">
+          <div class="r head">
+            3
+          </div>
+          <div class="p prank">invisible</div>
+          </div>
+          <hr>
+        </div>
+        <div class="table-row">
+          <div class="table-cell name">
+            <div class="head">Dummy Sharma</div>
+            <div class="p">Nit Hamirpur</div>
+          </div>
+          <div class="table-cell branch">
+            <div class="head">Year : 2</div>
+            <div class="p">Computer Science and Engineering</div>
+          </div>
+          <div class="table-cell cg">
+            <div class="head">CGPA : 9.5</div>
+            <div class="p">SGPA : 10</div>
+          </div>
+          <div class="table-cell rank">
+          <div class="r head">
+            3
+          </div>
+          <div class="p prank">invisible</div>
+          </div>
+          <hr>
+        </div>-->
+       
+        
+        
+      </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
