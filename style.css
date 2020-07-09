@@ -13,6 +13,10 @@ body {
   color: white;
 }
 
+::-webkit-scrollbar{
+  display: none;
+}
+
 /* :root {
     --first: #ffd701;
     --second : #c0c0c0;
