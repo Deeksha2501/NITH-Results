@@ -15,7 +15,6 @@ function check() {
   batchop.addEventListener("click", get());
   cs.addEventListener("click", get());
   var img = branch.split("_");
-  console.log(img[0]);
   document.querySelector(
     "body"
   ).style.backgroundImage = `linear-gradient(to bottom , rgba(0, 0, 0, 0.881) , rgba(0, 0, 0, 0.885)) ,url('./images/${img[0]}.jpg')`;

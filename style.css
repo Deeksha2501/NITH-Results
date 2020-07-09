@@ -180,9 +180,11 @@ input {
 }
 
 
-.branch-changer,
+.branch-changer{
+  width: 24%;
+}
 .batch-changer {
-  width: 15%;
+  width: 8%;
 }
 
 .ser-box {
