@@ -1,6 +1,8 @@
 let branch, batch, c;
 let con = document.querySelector("#table");
 
+$("#search").keyup(get);
+
 function check() {
   branch = document.querySelector("#branch").value;
   batch = document.querySelector("#batch").value;
