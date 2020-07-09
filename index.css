@@ -77,7 +77,10 @@ body {
   }
 }
 
+
+
 .header {
+    background-color: black;
   height: 100vh;
   background-image: linear-gradient(
       to bottom right,
@@ -118,6 +121,7 @@ body {
   font-size: 6rem;
   font-weight: 400;
   letter-spacing: 3.5rem;
+  -webkit-animation: moveInLeft 1s;
   animation: moveInLeft 1s;
   animation-timing-function: ease-in;
 }
@@ -126,6 +130,7 @@ body {
   font-size: 2.5rem;
   font-weight: 700;
   letter-spacing: 1.3rem;
+  -webkit-animation: moveInRight 1s;
   animation: moveInRight 1s;
   animation-timing-function: ease-in;
 }
@@ -187,6 +192,7 @@ body {
 }
 
 .btn--animated {
+  -webkit-animation: moveInBottom 0.5s ease-out 0.5s;
   animation: moveInBottom 0.5s ease-out 0.5s;
   animation-fill-mode: backwards;
 }
