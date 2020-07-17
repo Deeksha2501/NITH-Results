@@ -65,6 +65,7 @@ code {
   text-align: left;
   width: 20%;
   display: inline-block;
+  transition: .5s all;
 }
 
 .name {
@@ -116,12 +117,20 @@ hr {
   background-color: rgb(190, 190, 190);
 }
 
+.res{
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  width: 32%;
+}
+
 .r {
   line-height: 35px;
   /* padding-bottom: 10px; */
   display: inline-block;
-  width: 44%;
-  /* height: 4%; */
+  /* width: 44%; */
+  width: 35px;
+  height: 35px;
   background: #f4df31;
   border-radius: 50%;
   color: black;
@@ -141,11 +150,12 @@ hr {
 .batch-changer,
 .cg-sg,
 .sort {
+  transition: .5s all;
   display: inline-block;
 }
 
 .search {
-  width: 45%;
+  width: 40%;
   position: relative;
 }
 
@@ -157,7 +167,7 @@ label {
   font-size: 16px;
   transition: all 0.2s;
   opacity: 1;
-  cursor: pointer;
+  cursor: text;
 }
 
 input:placeholder-shown + label {
@@ -184,24 +194,28 @@ input {
   border-bottom: 1px solid turquoise;
   outline: 0;
   color: white;
+  cursor: ;
 }
 
 
 .branch-changer{
-  width: 24%;
+  width: 26%;
 }
 .batch-changer {
-  width: 7%;
+  width: 25%;
+}
+
+.cg-sg{
+  width: 30%;
 }
 
 .sort{
-  width: 7%;
+  width: 38%;
 }
 
 .ser-box {
   width: 80%;
   margin: 40px auto;
-  cursor: pointer;
 }
 
 select {
@@ -213,6 +227,7 @@ select {
   border: 0.2px solid rgb(151, 151, 151);
   border-radius: 5px;
   outline: 0;
+  cursor: pointer;
 }
 
 option {
@@ -220,9 +235,63 @@ option {
   padding: 10px;
   margin: 10px;
   background: black;
+  cursor: pointer;
 }
 
 .nothing{
   text-align: center;
   /* display: none; */
+}
+
+.tot{
+  width: 100% !important;
+  padding-bottom: 15px !important;
+  /* padding-left: 0 !important; */
+}
+
+@media only screen and (max-width: 1200px){
+  .ser-box{
+    width: 98%;
+  }
+  #table{
+    width: 98%;
+  }
+  .table_head{
+    width: 98%;
+  }
+}
+
+
+@media only screen and (max-width: 950px){
+  .table-cell{
+    padding: 10px 0;
+  }
+  .r{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+  }
+}
+
+@media only screen and (max-width: 750px){
+  .branch{
+    display: none;
+  }
+  .name{
+    width: 55%;
+  }
+  .cg{
+    width: 30%;
+  }
+  .rank{
+    width: 10%;
+  }
+  .head{
+    font-size: 15px;
+  }
+  .search, .branch-changer, .res{
+    width: 98%;
+    display: block;
+    margin: 10px auto;
+  }
 }
