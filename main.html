@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <title>NITH RESULTS</title>
+    <link rel="shortcut icon" href="images/logo.png" type="image/png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -44,6 +45,14 @@
         <select id="cg-sg" name="c-toggle" class="c-toggle">
           <option selected value="cg">CGPA</option>
           <option value="sg">SGPA</option>
+        </select>
+      </div>
+      <div class="sort"  title="sort: Abhabatically / Roll-no Wise" onchange="check()">
+        <select id="sort"  class="sort-toggle">
+          <option selected disabled value="default-sort">Sort</option>
+          <option value="rank">Rank-wise</option>
+          <option value="alpha">Alphabatically</option>
+          <option value="roll">Roll-no Wise</option>
         </select>
       </div>
       </div>

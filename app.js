@@ -1,4 +1,4 @@
-let branch, batch, c;
+let branch, batch, c , sort;
 let con = document.querySelector("#table");
 
 $("#search").keyup(get);
@@ -7,13 +7,31 @@ function check() {
   branch = document.querySelector("#branch").value;
   batch = document.querySelector("#batch").value;
   c = document.querySelector("#cg-sg").value;
-  console.log(c);
+  get();
   let branchop = document.querySelector("#branch");
   var batchop = document.querySelector("#batch");
   var cs = document.querySelector("#cg-sg");
-  branchop.addEventListener("click", get());
-  batchop.addEventListener("click", get());
-  cs.addEventListener("click", get());
+  sort_op = document.querySelector('#sort');
+  
+  
+
+  branchop.addEventListener("change", ()=>{
+    sort = 'default-sort'
+    get();
+  });
+  batchop.addEventListener("change", ()=>{
+    sort = 'default-sort'
+    get();
+  });
+  cs.addEventListener("change", ()=>{
+    sort = 'default-sort'
+    get();
+  }); 
+  sort_op.addEventListener("change", ()=>{
+    sort = document.querySelector('#sort').value;
+    get();
+  });
+
   var img = branch.split("_");
   document.querySelector(
     "body"
@@ -34,12 +52,20 @@ function get() {
   var expression = new RegExp(searchField, "i");
   $.getJSON(`./json/${branch}/batch_${batch}_${c}pi.json`, function (data) {
     let count = 0 , flag = 0;
-    // $('.table-row').empty();
-    // if(data.length === 0){
-    //   document.querySelector('.nothing').style.display = inline;
-    // }
-    // document.querySelector('.total').innerHTML = `Total Results : ${data.length}`;
     clear();
+    if(sort == 'alpha'){
+      data.sort( function( a, b ) {
+        return a.Name < b.Name ? -1 : a.Name > b.Name ? 1 : 0;
+      });
+    }else if(sort == 'roll'){
+      data.sort( function( a, b ) {
+        return a.Rollno < b.Rollno ? -1 : a.Rollno > b.Rollno ? 1 : 0;
+      });
+    }else if(sort == 'rank'){
+      data.sort( function( a, b ) {
+        return parseInt(a.Rank) < parseInt(b.Rank) ? -1 : parseInt(a.Rank) > parseInt(b.Rank) ? 1 : 0;
+      });
+    }
     $.each(data, function (key, value) {
       if (
         value.Name.search(expression) != -1 ||
@@ -69,7 +95,7 @@ function get() {
         if (value.Rank == 1) {
           color = "#ffd701";
         } else if (value.Rank == 2) {
-          color = "#c0c0c0";
+          color = "#dcdcdc";
         } else if (value.Rank == 3) {
           color = "#e3b778";
         } else {
@@ -112,3 +138,8 @@ function get() {
 }
 
 check();
+
+
+// places.sort( function( a, b ) {
+//   return a.city < b.city ? -1 : a.city > b.city ? 1 : 0;
+// });
