@@ -92,6 +92,7 @@ body {
   background-position: top;
   position: relative;
   background-attachment: fixed;
+  transition: .5s all;
 }
 .header__logo-box {
   position: absolute;
