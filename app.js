@@ -32,10 +32,10 @@ function check() {
     get();
   });
 
-  var img = branch.split("_");
+  var img =branch==='FullCollege'||branch==='FullYear'?'main': branch.split("_");
   document.querySelector(
     "body"
-  ).style.backgroundImage = `linear-gradient(to bottom , rgba(0, 0, 0, 0.881) , rgba(0, 0, 0, 0.885)) ,url('./images/${img[0]}.jpg')`;
+  ).style.backgroundImage = `linear-gradient(to bottom , rgba(0, 0, 0, 0.881) , rgba(0, 0, 0, 0.885)) ,url('./images/${img}.jpg')`;
 }
 
 function clear() {
@@ -50,7 +50,7 @@ function get() {
   $("#state").val("");
   var searchField = $("#search").val();
   var expression = new RegExp(searchField, "i");
-  $.getJSON(`./json/${branch}/batch_${batch}_${c}pi.json`, function (data) {
+  $.getJSON(`${branch==='FullCollege'?`./json/FULL_COLLEGE/full_college_${c}pi.json`:[`${branch==='FullYear'?`./json/FULL_YEAR/full_year_batch${batch}_${c}pi.json`:`./json/${branch}/batch_${batch}_${c}pi.json`}`]}`, function (data) {
     let count = 0 , flag = 0;
     clear();
     if(sort == 'alpha'){
