@@ -9,7 +9,7 @@ Data fetched by [srbcheema1/Nith_results](https://github.com/srbcheema1/Nith_res
 2- Arpita Tiwari
 
 ### Screenshots of the project
-![img 1](images/img2.jpg)
+![img 1](images/img2.jpg)<br/><br/>
 ![img 2](images/img1.jpg)
 
 
