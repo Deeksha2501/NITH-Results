@@ -5,9 +5,9 @@ Data fetched by [srbcheema1/Nith_results](https://github.com/srbcheema1/Nith_res
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors)
 
 ### Contributors
-1- Deeksha Sharma<br/>
-2- Tanya Bhandari<br/>
-3- Arpita Tiwari
+1- [Deeksha Sharma](https://github.com/Deeksha2501/)<br/>
+2- [Tanya Bhandari](https://github.com/66rhythm/)<br/>
+3- [Arpita Tiwari](https://github.com/Arpita309/)
 
 ### Screenshots of the project
 ![img 1](images/img2.jpg)<br/><br/>
