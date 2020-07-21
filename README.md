@@ -16,3 +16,5 @@ Data fetched by [srbcheema1/Nith_results](https://github.com/srbcheema1/Nith_res
 ![img 2](images/img1.jpg)
 
 
+Link to the website:
+https://nith-results.vercel.app/
