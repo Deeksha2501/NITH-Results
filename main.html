@@ -31,6 +31,8 @@
           <option value="Electrical">Electrical Engineering</option>
           <option value="Material">Material Science & Engineering</option>
           <option value="Mechanical">Mechanical Engineering</option>
+            <option value="FullCollege">Full College</option>
+          <option value="FullYear">Full Year</option>
         </select>
       </div>
       <div class="res">
@@ -58,9 +60,10 @@
       </div>
       </div>
       <div class="specific">
-        Wanna check you result specifically?
-        <input type="number" name="roll_num" id="roll_num">
-        <button class="specific_roll_submit">Check</button>
+        <form style="display: inline-block;">
+        <input type="number" name="roll_num" id="roll_num" min="0">
+        <button type="submit" class="specific_roll_submit">Check</button>
+        </form>
       </div>
       </div>
       </div>
@@ -145,7 +148,7 @@
       </div>
       </div>
       <div class="footer">
-        <p>Made with 💖 by <a target="_blank" class="git-link" href="https://github.com/Deeksha2501/NITH-Results">DAT(Deeksha Sharma, Tanya Bhandari, Arpita Tiwari)</p></a>
+        <p><a target="_blank" class="git-link" href="https://github.com/Deeksha2501/NITH-Results">Copyright &copy; 2020</p></a>
           <p class="credit">  Data fetched from <a target="_blank" href="https://github.com/srbcheema1/Nith_results">github.com/srbcheema1/Nith_results</a>
         </p>
       </div>

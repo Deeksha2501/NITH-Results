@@ -35,10 +35,10 @@ function check() {
     get();
   });
 
-  var img = branch.split("_");
+  var img =branch==='FullCollege'||branch==='FullYear'?'main': branch.split("_");
   document.querySelector(
     "body"
-  ).style.backgroundImage = `linear-gradient(to bottom , rgba(0, 0, 0, 0.881) , rgba(0, 0, 0, 0.885)) ,url('./images/${img[0]}.jpg')`;
+  ).style.backgroundImage = `linear-gradient(to bottom , rgba(0, 0, 0, 0.881) , rgba(0, 0, 0, 0.885)) ,url('./images/${img}.jpg')`;
 }
 
 function clear() {
@@ -53,7 +53,7 @@ function get() {
   $("#state").val("");
   var searchField = $("#search").val();
   var expression = new RegExp(searchField, "i");
-  $.getJSON(`./json/${branch}/batch_${batch}_${c}pi.json`, function (data) {
+  $.getJSON(`${branch==='FullCollege'?`./json/FULL_COLLEGE/full_college_${c}pi.json`:[`${branch==='FullYear'?`./json/FULL_YEAR/full_year_batch${batch}_${c}pi.json`:`./json/${branch}/batch_${batch}_${c}pi.json`}`]}`, function (data) {
     let count = 0 , flag = 0;
     clear();
     if(sort == 'alpha'){
@@ -149,7 +149,6 @@ check();
 // });
 
 
-
 function binary_Search(data, value){
   var firstIndex  = 0,
       lastIndex   = data.length - 1,
@@ -171,9 +170,58 @@ function binary_Search(data, value){
 return (data[middleIndex].Rollno != value) ? -1 : middleIndex;
 }
 
-submit_button.addEventListener('click' , ()=>{
+submit_button.addEventListener('click' , (e)=>{
+  e.preventDefault();
   if(specific_roll.value){
     clear();
-    document.querySelector('.total').innerHTML = `Total Results : 0`; 
+    $.getJSON('./json/FULL_COLLEGE/full_college_cgpi.json' , (data)=>{
+      data.sort( function( a, b ) {
+        return a.Rollno < b.Rollno ? -1 : a.Rollno > b.Rollno ? 1 : 0;
+      });
+      console.log(data[binary_Search(data , specific_roll.value)])
+      const value = data[binary_Search(data , specific_roll.value)];
+      if(value){
+        document.querySelector('.nothing').style.display = "none";
+    document.querySelector('.total').innerHTML = `Total Results : 1`; 
+      let color = "";
+      if (value.Rank == 1) {
+        color = "#ffd701";
+      } else if (value.Rank == 2) {
+        color = "#dcdcdc";
+      } else if (value.Rank == 3) {
+        color = "#e3b778";
+      } else {
+        color = "#00acbd";
+      }
+      $("#table").append(
+        `
+  <div class="table-row">
+  <div class="table-cell name">
+      <div class="head">${value.Rollno}</div>
+      <div class="p">${value.Name}</div>
+    </div>
+  <div class="table-cell branch">
+    <div class="head">Year : ${value.Year}</div>
+    <div class="p">${branch}</div>
+  </div>
+  <div class="table-cell cg">
+    <div class="head">CGPA : ${value.Cgpa}</div>
+    <div class="p">SGPA : ${value.Sgpa}</div>
+  </div>
+  <div class="table-cell rank">
+  <div style="background-color: ${color}" class="r head">
+    ${value.Rank}
+  </div>
+  <div class="p prank">invisible</div>
+  </div>
+</div>
+      `
+      );
+      }
+      else{
+        document.querySelector('.total').innerHTML = `Total Results : 0`;
+        document.querySelector('.nothing').style.display = "block";
+      }
+    })
   }
 })
