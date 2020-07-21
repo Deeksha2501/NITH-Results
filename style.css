@@ -329,3 +329,45 @@ option {
 .footer a:hover{
   color: aqua;
 }
+
+.specific{
+  text-align: center;
+  margin: 20px 0;
+}
+
+form{
+  border: .1px solid turquoise;
+  border-radius: 4px;
+  margin: 10px;
+}
+
+form button{
+  border-radius: 54%;
+  background: transparent;
+  border: 0;
+  border-bottom: 0;
+  color: white;
+  padding: 6px 7px;
+  cursor: pointer;
+}
+
+#roll_num{
+  width: 80px;
+  /* height: 20px; */
+  background: transparent;
+  border: 0;
+  padding: 4px 6px;
+  /* border: .1px solid turquoise; */
+  outline: 0;
+  color: white;
+}
+
+button:active{
+  outline: 0;
+  border: 0;
+}
+
+button:focus{
+  outline: 0;
+  border: 0;
+}

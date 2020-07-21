@@ -224,4 +224,7 @@ submit_button.addEventListener('click' , (e)=>{
       }
     })
   }
+  else{
+    get();
+  }
 })
