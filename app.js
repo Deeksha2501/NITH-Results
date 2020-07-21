@@ -65,12 +65,11 @@ function get() {
         return parseInt(a.Rank) < parseInt(b.Rank) ? -1 : parseInt(a.Rank) > parseInt(b.Rank) ? 1 : 0;
       });
     }
-        // else if(sort == 'roll'){
+        else if(sort == 'roll'){
           data.sort( function( a, b ) {
             return a.Rollno < b.Rollno ? -1 : a.Rollno > b.Rollno ? 1 : 0;
           });
-        // }
-        console.log(data[binary_Search(data , '185094')]);
+        }
     $.each(data, function (key, value) {
       if (
         value.Name.search(expression) != -1 ||
