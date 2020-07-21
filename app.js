@@ -1,5 +1,8 @@
 let branch, batch, c , sort;
 let con = document.querySelector("#table");
+let submit_button = document.querySelector('.specific_roll_submit');
+let specific_roll = document.querySelector('#roll_num');
+console.log(submit_button);
 
 $("#search").keyup(get);
 
@@ -57,15 +60,17 @@ function get() {
       data.sort( function( a, b ) {
         return a.Name < b.Name ? -1 : a.Name > b.Name ? 1 : 0;
       });
-    }else if(sort == 'roll'){
-      data.sort( function( a, b ) {
-        return a.Rollno < b.Rollno ? -1 : a.Rollno > b.Rollno ? 1 : 0;
-      });
     }else if(sort == 'rank'){
       data.sort( function( a, b ) {
         return parseInt(a.Rank) < parseInt(b.Rank) ? -1 : parseInt(a.Rank) > parseInt(b.Rank) ? 1 : 0;
       });
     }
+        // else if(sort == 'roll'){
+          data.sort( function( a, b ) {
+            return a.Rollno < b.Rollno ? -1 : a.Rollno > b.Rollno ? 1 : 0;
+          });
+        // }
+        console.log(data[binary_Search(data , '185094')]);
     $.each(data, function (key, value) {
       if (
         value.Name.search(expression) != -1 ||
@@ -76,7 +81,6 @@ function get() {
         count += 1;
         document.querySelector('.nothing').style.display = "none";
         document.querySelector('.total').innerHTML = `Total Results : ${count}`;
-        // console.log(value);
         let branch = value.Branch.split('_')[0];
         if(branch == 'Cse'){
           branch = 'Computer Science and Enginnering'
@@ -143,3 +147,33 @@ check();
 // places.sort( function( a, b ) {
 //   return a.city < b.city ? -1 : a.city > b.city ? 1 : 0;
 // });
+
+
+
+function binary_Search(data, value){
+  var firstIndex  = 0,
+      lastIndex   = data.length - 1,
+      middleIndex = Math.floor((lastIndex + firstIndex)/2);
+
+  while(data[middleIndex].Rollno != value && firstIndex < lastIndex)
+  {
+     if (value < data[middleIndex].Rollno)
+      {
+          lastIndex = middleIndex - 1;
+      } 
+    else if (value > data[middleIndex].Rollno)
+      {
+          firstIndex = middleIndex + 1;
+      }
+      middleIndex = Math.floor((lastIndex + firstIndex)/2);
+  }
+
+return (data[middleIndex].Rollno != value) ? -1 : middleIndex;
+}
+
+submit_button.addEventListener('click' , ()=>{
+  if(specific_roll.value){
+    clear();
+    document.querySelector('.total').innerHTML = `Total Results : 0`; 
+  }
+})
