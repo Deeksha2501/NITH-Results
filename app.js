@@ -134,6 +134,7 @@ function get() {
     if(flag == 0){
       count = 0;
       document.querySelector('.total').innerHTML = `Total Results : ${count}`;
+      document.querySelector('.nothing').innerHTML = 'Oops! Nothing to show. Try with a diffrent keyword! :)'
       document.querySelector('.nothing').style.display = "block";
 
     }
@@ -219,6 +220,7 @@ submit_button.addEventListener('click' , (e)=>{
       }
       else{
         document.querySelector('.total').innerHTML = `Total Results : 0`;
+        document.querySelector('.nothing').innerHTML = 'Enter a valid Roll number!'
         document.querySelector('.nothing').style.display = "block";
       }
     })
