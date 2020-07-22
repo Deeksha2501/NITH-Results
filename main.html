@@ -22,9 +22,15 @@
 
     <div class="branch-changer">
         <select name="branch" id="branch" title="Branch" onchange="check()">
-          <option value="Architecture">Architecture</option>
-          <option value="Chemical">Chemical Engineering</option>
-          <option value="Civil">Civil Engineering</option>
+          <option value="Architecture">
+            Architecture
+          </option>
+          <option value="Chemical">
+            Chemical Engineering
+          </option>
+          <option value="Civil">
+            Civil Engineering
+          </option>
           <option selected value="Cse">Computer Science & Engineeing</option>
           <option value="Cse_dual">Cse(Dual Degree)</option>
           <option value="Ece">Electronics & Comm. Engineering</option>
@@ -32,17 +38,18 @@
           <option value="Electrical">Electrical Engineering</option>
           <option value="Material">Material Science & Engineering</option>
           <option value="Mechanical">Mechanical Engineering</option>
-            <option value="FullCollege">Full College</option>
+          <option value="FullCollege">Full College</option>
           <option value="FullYear">Full Year</option>
         </select>
+
       </div>
       <div class="res">
       <div class="batch-changer">
         <select name="batch" id="batch" title="Batch" onchange="check()">
-          <option  value="19">19</option>
-          <option selected value="18">18</option>
-          <option value="17">17</option>
-          <option value="16">16</option>
+          <option  value="19">2019-2023</option>
+          <option selected value="18">2018-2022</option>
+          <option value="17">2017-2021</option>
+          <option value="16">2016-2020</option>
         </select>
       </div>
       <div class="cg-sg"  title="sort: CGPA / SGPA" onchange="check()">
@@ -53,7 +60,6 @@
       </div>
       <div class="sort"  title="sort: Abhabatically / Roll-no Wise" onchange="check()">
         <select id="sort"  class="sort-toggle">
-          <option  disabled value="default-sort">Sort</option>
           <option selected value="rank">Rank-wise</option>
           <option value="alpha">Alphabatically</option>
           <option value="roll">Roll-no Wise</option>
