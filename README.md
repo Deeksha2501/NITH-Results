@@ -3,7 +3,7 @@ This repository contains the results details of all batches(currently studying) 
 Data fetched by [srbcheema1/Nith_results](https://github.com/srbcheema1/Nith_results)<br>
 
 [Web interface](http://nith-results.vercel.app/) <br><br>
-[![HitCount](http://hits.dwyl.com/Deeksha2501/NITH-Results.svg)](http://hits.dwyl.com/Deeksha2501/NITH-Results)
+[![HitCount](http://hits.dwyl.com/Deeksha2501/nith-results.svg)](http://hits.dwyl.com/Deeksha2501/nith-results)
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors)
 
 ### Contributors
